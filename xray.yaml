@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: xray
+spec:
+  nodeName: node
+  containers:
+    - name: xray
+      image: xray/teddysun
+      volumeMounts:
+      - name: xray
+        mountPath: /etc/xray/config.json
+        subPath: config.json
+      imagePullPolicy: IfNotPresent
+      command: [ "/bin/sh" ]
+      args: ["-c","xray -config=/etc/xray/config.json"]
+  volumes:
+  - name: xray
+    configMap:
+      name: xray
