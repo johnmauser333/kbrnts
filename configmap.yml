@@ -6,8 +6,8 @@ metadata:
   labels:
     k8s-app: v2ray
 data:
-  config.json: |-
-    {
+  config.json: 
+   {
     "inbounds": [
         {
             "port": 3333,
@@ -32,4 +32,4 @@ data:
             "protocol": "freedom"
         }
     ]
-    }
+}
