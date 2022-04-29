@@ -6,7 +6,7 @@ spec:
   nodeName: node
   containers:
     - name: xray
-      image: xray/teddysun
+      image: teddysun/xray
       volumeMounts:
       - name: xray
         mountPath: /etc/xray/config.json
